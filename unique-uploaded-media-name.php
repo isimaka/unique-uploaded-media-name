@@ -109,7 +109,7 @@ function unique_uploaded_media_name($filename) {
 		
 	// if file extension matches $media_extensions then rename
 	foreach ($media_extensions as &$value) {
-        if ($info['extension'] == $value) {
+        if (strtolower($info['extension']) == $value) {
 			// rename file name with arbitrary alphabet and numbers
             return UniqueUploadedMediaName::stringTen() . $ext;
 
